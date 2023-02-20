@@ -1,0 +1,37 @@
+[
+    {
+        "model_name": "ViTPose small with classic decoder",
+        "config_file_name": "ViTPose_small_classic_coco_256x192.py",
+        "weights_link": "https://6mafda.dm.files.1drv.com/y4mmIJNdva0GSE02wT52EQuFmSznit6ImM0t3esSsl3NMZt0_uTf93IohQSyak8JliqfSwuolqB4jChvQaA8PkjudYpX9cFoMJyRwB0A0G_asIHEh51TUIw_BYPyN9fY3qo0h82BjvdI1UC1u9jObNrWIotxzdwdbVE63h6Xnv5_6TCyOb6yl9zdJ_dDaZZ4i2DmnOQtSylfgmnGCTA89qz3g"
+    },
+    {
+        "model_name": "ViTPose base with classic decoder",
+        "config_file_name": "ViTPose_base_classic_coco_256x192.py",
+        "weights_link": "https://4mizfq.sn.files.1drv.com/y4mmN4HVKiAoyjCvPyKAWSK2Tkv5UaooeY2XmcUdxRwftMfZZ35N2kOIeyvgHzCiB2wW6yhYBdjU_nsoa2eHkSE7iWL903bTmUPrFWR3U5fPeMEXWOLVZwN2HaD-JRETuuDiLF249A_zeR3ZyxCLjnF4svHU2RLo3lgy918r59l5yA5UBrOCIE2-KpUFiF3nFo8Ae4Hf8ybzWYv7t7mbwotTQ"
+    },
+    {
+        "model_name": "ViTPose large with classic decoder",
+        "config_file_name": "ViTPose_large_classic_coco_256x192.py",
+        "weights_link": "https://4mgtqw.sn.files.1drv.com/y4muyZuraUZxqpGqetU-fB_B4sALZSZMx6j3wc2xKdKChDgi_SXEyT3MfBWYx2qyw9D8yyM2FUtOM-8RqoxjG8IgaJOYZLf_Qh_0U2SATiGVrHXZee0NmG0VgYHWlfZ0NoIQlo06qsO0bgU0ZmVInEJxJ7vHBgps0CTpMZXNpLSQ5B82i92RmC-zp4cOgNf3tMZPu3NzAyh0XfO8wdSLdWwQg"
+    },
+    {
+        "model_name": "ViTPose huge with classic decoder",
+        "config_file_name": "ViTPose_huge_classic_coco_256x192.py",
+        "weights_link": "https://4mhcga.sn.files.1drv.com/y4mQ0SBqPL1IdlD3y4hTbINxvXUKs0HrrVRPanQ4jyO5KBya1WPcycvpXaKrSrfnRqOhyQ3oY6nCuEU1pXg4EMIHeTKao9BKkIbGuVLD1HX_-0usLSeEf68_a51Nu0qXXGST0udHiK67rHuZhiyNEhd-Ot3tdvVhEUb1gdMEV4V8GkwW2HAzR8Szw1PFRuyN38y3hXMz15art5HyGtPlaQ42A"
+    },
+    {
+        "model_name": "ViTPose base with simple decoder",
+        "config_file_name": "ViTPose_base_simple_coco_256x192.py",
+        "weights_link": "https://4mjpca.sn.files.1drv.com/y4mOufNy2ng5Rt1sLrxsCfgiBEWE3d_8gzg05YvEL7WfRyOlgLw2GvDMSkKclgj_PKLGFM_yOd39-oZYmwNNoKIjITk3-Y2CrNe89O7Z296hlISaxITblPItJCRMIB_hqnKm7S8E85GP20YO2d2Sx3oRi7Udj-tU5BxNYXdsBVecisbdFts88MgkETD4UBOeJEaIascjwkWt7R-RxXgchI_Fg"
+    },
+    {
+        "model_name": "ViTPose large with simple decoder",
+        "config_file_name": "ViTPose_large_simple_coco_256x192.py",
+        "weights_link": "https://4mhjla.sn.files.1drv.com/y4m-GEx5WZJadsRnc_CXhpQjHcYe1Fkds-x8DAZsSYKni3OzG7PVYZ2b0ksZRvwUrXzxgzbLxguZqczfPr0RLZi5AIMdRS1EiSEA_Mz1UUhtDSV5KGoyucwmi-Sh7-006FomYN8XbAE8kFQ9CyT5MJBHAW1A8EF16Jm_BOw8v0miDgsH9hwPBBLmmxemXnhYpYjPEfzTAkd6o1FhXP_C_AVJw"
+    },
+    {
+        "model_name": "ViTPose huge with simple decoder",
+        "config_file_name": "ViTPose_huge_simple_coco_256x192.py",
+        "weights_link": "https://4mjihw.sn.files.1drv.com/y4mfkamk4TR0ObzjlPk1eEEaB6XA_X8paLZPDAe4PF2NFsQT4oxk1VcaS8tHjt95Wvfoj71pXmEUuurpW4X1HrzflnkQWSjzP0GK2PtU_VfHRtiMRJSQNk_Qn0rIrJEhAngbk2uUa9_zvkOhPhhOlecSSQLuzbZTMTtJGIZcDFEaJ0u_I6rk1mk4RXF84SeiA472Ko27kGr-1ptCklmByoygQ"
+    }
+]
