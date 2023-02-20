@@ -1,0 +1,26 @@
+{
+  "type": "app",
+  "version": "2.0.0",
+  "name": "Serve ViTPose",
+  "description": "Learn how to use this app in readme",
+  "categories": [
+    "neural network",
+    "images",
+    "pose estimation",
+    "keypoints detection",
+    "serve",
+    "development"
+  ],
+  "icon": "some url",
+  "poster": "some url",
+  "context_menu": {
+    "target": ["files_folder"]
+  },
+  "need_gpu": true,
+  "session_tags": ["deployed_nn_keypoints"],
+  "community_agent": false,
+  "docker_image": "supervisely/mmpose-demo:1.0.0",
+  "entrypoint": "python -m uvicorn src.main:m.app --host 0.0.0.0 --port 8000",
+  "port": 8000,
+  "headless": true
+}
