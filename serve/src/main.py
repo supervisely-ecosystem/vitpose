@@ -54,7 +54,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             custom_link = self.gui.get_custom_link()
             if not sly.fs.file_exists(weights_dst_path):
                 self.download(
-                    src_path=os.path.join(os.path.dirname(custom_link), "weights.pth"),
+                    src_path=custom_link,
                     dst_path=weights_dst_path,
                 )
             config_path = self.download(
