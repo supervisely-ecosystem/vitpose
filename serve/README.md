@@ -28,4 +28,9 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 Application key points:
 - Serve custom and MMSegmentation models
-- Deployed on GPU
+
+## Available models
+
+Supported architectures:
+
+- [x] [ViTPose (NeurIPS'22)](https://github.com/ViTAE-Transformer/ViTPose)
