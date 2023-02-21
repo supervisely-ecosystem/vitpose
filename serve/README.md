@@ -44,3 +44,7 @@ You can use served model in next Supervisely Applications ⬇️
 - [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
    
     <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png" width="350px"/>
+    
+# Acknowledgment
+
+This app is based on the great work `ViTPose` ([github](https://github.com/ViTAE-Transformer/ViTPose)). ![GitHub Org's stars](https://img.shields.io/github/stars/ViTAE-Transformer/ViTPose?style=social)
