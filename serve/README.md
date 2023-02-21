@@ -21,18 +21,9 @@
 
 # Overview
 
-Serve ViTPose model as Supervisely Application. ViTPose is an open source pose estimation toolbox based on PyTorch. Learn more about ViTPose and available models [here](https://github.com/open-mmlab/mmsegmentation).
+Serve ViTPose model as Supervisely Application. ViTPose is an open source pose estimation toolbox based on PyTorch. Learn more about ViTPose and available models [here](https://github.com/ViTAE-Transformer/ViTPose).
 
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (full image, image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
-
-Application key points:
-- Serve pretrained ViTPose models
-
-## Available models
-
-Supported architectures:
-
-- [x] [ViTPose (NeurIPS'22)](https://github.com/ViTAE-Transformer/ViTPose)
 
 # How to Use
 
@@ -46,4 +37,10 @@ Supported architectures:
 
 ![screenshot-dev-supervise-ly-apps-7412-sessions-27761-1676980517943](https://user-images.githubusercontent.com/91027877/220338410-3812095f-e9d2-4a2a-933e-0579b280ca46.png)
 
+# Related apps
 
+You can use served model in next Supervisely Applications ⬇️
+
+- [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
+   
+    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png" width="350px"/>
