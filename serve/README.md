@@ -6,7 +6,6 @@
   
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Run">How To Run</a> •
   <a href="#How-To-Use">How To Use</a> •
   <a href="#Related-apps">Related Apps</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
@@ -34,3 +33,13 @@ Application key points:
 Supported architectures:
 
 - [x] [ViTPose (NeurIPS'22)](https://github.com/ViTAE-Transformer/ViTPose)
+
+# How to Use
+
+**Pretrained models**
+
+**Step 1.** Select pretrained model architecture and press the **Serve** button
+
+![screenshot-dev-supervise-ly-apps-7412-sessions-27716-1676977390333](https://user-images.githubusercontent.com/91027877/220327825-49c9433b-4ac4-45d7-a1c4-cb1e2bfde606.png)
+
+
