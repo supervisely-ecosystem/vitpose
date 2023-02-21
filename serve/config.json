@@ -11,8 +11,9 @@
     "serve",
     "development"
   ],
-  "icon": "some url",
-  "poster": "some url",
+  "icon": "https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png",
+  "icon_cover": true,
+  "poster": "https://user-images.githubusercontent.com/97401023/220314920-2c2892eb-c11b-4fea-a17e-898a09fcfbed.png",
   "need_gpu": false,
   "session_tags": ["deployed_nn_keypoints"],
   "community_agent": false,
