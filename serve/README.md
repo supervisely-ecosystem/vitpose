@@ -26,7 +26,7 @@ Serve ViTPose model as Supervisely Application. ViTPose is an open source pose e
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (full image, image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
 Application key points:
-- Serve custom and MMSegmentation models
+- Serve pretrained ViTPose models
 
 ## Available models
 
