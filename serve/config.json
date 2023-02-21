@@ -13,9 +13,6 @@
   ],
   "icon": "some url",
   "poster": "some url",
-  "context_menu": {
-    "target": ["files_file"]
-  },
   "need_gpu": true,
   "session_tags": ["deployed_nn_keypoints"],
   "community_agent": false,
