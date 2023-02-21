@@ -42,4 +42,7 @@ Supported architectures:
 
 ![screenshot-dev-supervise-ly-apps-7412-sessions-27716-1676977390333](https://user-images.githubusercontent.com/91027877/220327825-49c9433b-4ac4-45d7-a1c4-cb1e2bfde606.png)
 
+**Step 2.** Wait for the model to deploy
+
+
 
