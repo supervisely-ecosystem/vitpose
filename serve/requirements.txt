@@ -1,1 +1,1 @@
-git+https://github.com/supervisely/supervisely.git@maxtes-support-gui-inference
+git+https://github.com/supervisely/supervisely.git@support-ui-inference
