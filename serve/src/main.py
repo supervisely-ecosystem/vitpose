@@ -14,7 +14,7 @@ import cv2
 from mmpose.apis import inference_top_down_pose_model, init_pose_model
 import numpy as np
 import os
-from src.keypoints_templates import human_template, animal_template
+# from src.keypoints_templates import human_template, animal_template
 
 
 root_source_path = str(Path(__file__).parents[2])
@@ -248,6 +248,87 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 sly.nn.PredictionKeypoints(class_name, included_labels, included_point_coordinates)
             )
         return results
+
+
+# build human template
+human_template = KeypointsTemplate()
+# add nodes
+human_template.add_point(label="nose", row=635, col=427)
+human_template.add_point(label="left_eye", row=597, col=404)
+human_template.add_point(label="right_eye", row=685, col=401)
+human_template.add_point(label="left_ear", row=575, col=431)
+human_template.add_point(label="right_ear", row=723, col=425)
+human_template.add_point(label="left_shoulder", row=502, col=614)
+human_template.add_point(label="right_shoulder", row=794, col=621)
+human_template.add_point(label="left_elbow", row=456, col=867)
+human_template.add_point(label="right_elbow", row=837, col=874)
+human_template.add_point(label="left_wrist", row=446, col=1066)
+human_template.add_point(label="right_wrist", row=845, col=1073)
+human_template.add_point(label="left_hip", row=557, col=1035)
+human_template.add_point(label="right_hip", row=743, col=1043)
+human_template.add_point(label="left_knee", row=541, col=1406)
+human_template.add_point(label="right_knee", row=751, col=1421)
+human_template.add_point(label="left_ankle", row=501, col=1760)
+human_template.add_point(label="right_ankle", row=774, col=1765)
+# add edges
+human_template.add_edge(src="left_ankle", dst="left_knee")
+human_template.add_edge(src="left_knee", dst="left_hip")
+human_template.add_edge(src="right_ankle", dst="right_knee")
+human_template.add_edge(src="right_knee", dst="right_hip")
+human_template.add_edge(src="left_hip", dst="right_hip")
+human_template.add_edge(src="left_shoulder", dst="left_hip")
+human_template.add_edge(src="right_shoulder", dst="right_hip")
+human_template.add_edge(src="left_shoulder", dst="right_shoulder")
+human_template.add_edge(src="left_shoulder", dst="left_elbow")
+human_template.add_edge(src="right_shoulder", dst="right_elbow")
+human_template.add_edge(src="left_elbow", dst="left_wrist")
+human_template.add_edge(src="right_elbow", dst="right_wrist")
+human_template.add_edge(src="left_eye", dst="right_eye")
+human_template.add_edge(src="nose", dst="left_eye")
+human_template.add_edge(src="nose", dst="right_eye")
+human_template.add_edge(src="left_eye", dst="left_ear")
+human_template.add_edge(src="right_eye", dst="right_ear")
+human_template.add_edge(src="left_ear", dst="left_shoulder")
+human_template.add_edge(src="right_ear", dst="right_shoulder")
+
+# build animal template
+animal_template = KeypointsTemplate()
+# add nodes
+animal_template.add_point(label="left_eye", row=571, col=784)
+animal_template.add_point(label="right_eye", row=391, col=784)
+animal_template.add_point(label="nose", row=358, col=947)
+animal_template.add_point(label="neck", row=799, col=1111)
+animal_template.add_point(label="root_of_tail", row=1371, col=817)
+animal_template.add_point(label="left_shoulder", row=1093, col=1306)
+animal_template.add_point(label="left_elbow", row=1077, col=1617)
+animal_template.add_point(label="left_front_paw", row=1158, col=1911)
+animal_template.add_point(label="right_shoulder", row=734, col=1356)
+animal_template.add_point(label="right_elbow", row=799, col=1619)
+animal_template.add_point(label="right_front_paw", row=767, col=1894)
+animal_template.add_point(label="left_hip", row=1436, col=1258)
+animal_template.add_point(label="left_knee", row=1420, col=1535)
+animal_template.add_point(label="left_back_paw", row=1420, col=1862)
+animal_template.add_point(label="right_hip", row=1224, col=1339)
+animal_template.add_point(label="right_knee", row=1289, col=1551)
+animal_template.add_point(label="right_back_paw", row=1305, col=1829)
+# add edges
+animal_template.add_edge(src="left_eye", dst="right_eye")
+animal_template.add_edge(src="left_eye", dst="nose")
+animal_template.add_edge(src="right_eye", dst="nose")
+animal_template.add_edge(src="nose", dst="neck")
+animal_template.add_edge(src="neck", dst="root_of_tail")
+animal_template.add_edge(src="neck", dst="left_shoulder")
+animal_template.add_edge(src="left_shoulder", dst="left_elbow")
+animal_template.add_edge(src="left_elbow", dst="left_front_paw")
+animal_template.add_edge(src="neck", dst="right_shoulder")
+animal_template.add_edge(src="right_shoulder", dst="right_elbow")
+animal_template.add_edge(src="right_elbow", dst="right_front_paw")
+animal_template.add_edge(src="root_of_tail", dst="left_hip")
+animal_template.add_edge(src="left_hip", dst="left_knee")
+animal_template.add_edge(src="left_knee", dst="left_back_paw")
+animal_template.add_edge(src="root_of_tail", dst="right_hip")
+animal_template.add_edge(src="right_hip", dst="right_knee")
+animal_template.add_edge(src="right_knee", dst="right_back_paw")
 
 
 settings = {"point_threshold": 0.1}
