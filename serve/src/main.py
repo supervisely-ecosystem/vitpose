@@ -44,7 +44,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 return "human pose estimation"
             elif selected_model_name.endswith("animal pose estimation"):
                 return "animal pose estimation"
-        elif model_source == "Custom weights":
+        elif model_source == "Custom models":
             return self.select_task_type.get_value()
 
     def set_template(self):
@@ -159,7 +159,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 root_source_path, "configs", models_data[selected_model]["config"]
             )
             return weights_dst_path, config_path
-        elif model_source == "Custom weights":
+        elif model_source == "Custom models":
             custom_link = self.gui.get_custom_link()
             weights_file_name = os.path.basename(custom_link)
             weights_dst_path = os.path.join(model_dir, weights_file_name)
