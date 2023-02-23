@@ -20,6 +20,7 @@ from src.keypoints_templates import human_template, animal_template
 root_source_path = str(Path(__file__).parents[2])
 app_source_path = str(Path(__file__).parents[1])
 model_data_path = os.path.join(root_source_path, "models", "model_data.json")
+configs_path = os.path.join(root_source_path, "configs")
 load_dotenv("local.env")
 load_dotenv(os.path.expanduser("~/supervisely.env"))
 
@@ -170,7 +171,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 )
             config_path = self.download(
                 src_path=os.path.join(os.path.dirname(custom_link), "pose_config.py"),
-                dst_path=os.path.join(model_dir, "pose_config.py"),
+                dst_path=os.path.join(configs_path, "pose_config.py"),
             )
             return weights_dst_path, config_path
 
