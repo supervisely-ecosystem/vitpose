@@ -1,4 +1,5 @@
 import supervisely as sly
+from supervisely.app.widgets import RadioGroup, Field
 from typing_extensions import Literal
 from typing import List, Any, Dict, Optional
 from pathlib import Path
@@ -24,12 +25,27 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 
 class ViTPoseModel(sly.nn.inference.PoseEstimation):
+    def add_content_to_custom_tab(self, gui):
+        self.select_task_type = RadioGroup(
+            items=[
+                RadioGroup.Item(value="human pose estimation"),
+                RadioGroup.Item(value="animal pose estimation"),
+            ],
+            direction="vertical",
+        )
+        select_task_type_f = Field(self.select_task_type, "Select task type")
+        return select_task_type_f
+
     def get_task_type(self):
-        selected_model_name = self.gui.get_checkpoint_info()["Model"]
-        if selected_model_name.endswith("human pose estimation"):
-            return "human pose estimation"
-        elif selected_model_name.endswith("animal pose estimation"):
-            return "animal pose estimation"
+        model_source = self.gui.get_model_source()
+        if model_source == "Pretrained models":
+            selected_model_name = self.gui.get_checkpoint_info()["Model"]
+            if selected_model_name.endswith("human pose estimation"):
+                return "human pose estimation"
+            elif selected_model_name.endswith("animal pose estimation"):
+                return "animal pose estimation"
+        elif model_source == "Custom weights":
+            return self.select_task_type.get_value()
 
     def set_template(self):
         task_type = self.get_task_type()
@@ -168,7 +184,10 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         # define model config and checkpoint
         if sly.is_production():
             pose_checkpoint, pose_config = self.get_weights_and_config_path(model_dir)
-            if self.gui.get_checkpoint_info()["Model"].startswith("ViTPose+"):
+            if (
+                self.gui.get_checkpoint_info()["Model"].startswith("ViTPose+")
+                and self.gui.get_model_source() == "Pretrained models"
+            ):
                 self.preprocess_weights(pose_checkpoint)
         else:
             # for local debug only
