@@ -14,7 +14,8 @@ import cv2
 from mmpose.apis import inference_top_down_pose_model, init_pose_model
 import numpy as np
 import os
-# from src.keypoints_templates import human_template, animal_template
+from supervisely.app.widgets import Container, RadioGroup, Field
+from src.keypoints_templates import human_template, animal_template
 
 
 root_source_path = str(Path(__file__).parents[2])
@@ -25,6 +26,10 @@ load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 
 class ViTPoseModel(sly.nn.inference.PoseEstimation):
+    def add_content_to_custom_tab(self, gui):
+        # radio group widget
+        return field
+
     def get_task_type(self):
         selected_model_name = self.gui.get_checkpoint_info()["Model"]
         if selected_model_name.endswith("human pose estimation"):
@@ -140,7 +145,9 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             weights_dst_path = os.path.join(model_dir, weights_file_name)
             if not sly.fs.file_exists(weights_dst_path):
                 self.download(src_path=weights_link, dst_path=weights_dst_path)
-            config_path = os.path.join(root_source_path, "configs", models_data[selected_model]["config"])
+            config_path = os.path.join(
+                root_source_path, "configs", models_data[selected_model]["config"]
+            )
             return weights_dst_path, config_path
         elif model_source == "Custom weights":
             custom_link = self.gui.get_custom_link()
