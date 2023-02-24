@@ -38,22 +38,28 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         return select_task_type_f
 
     def get_task_type(self):
-        model_source = self.gui.get_model_source()
-        if model_source == "Pretrained models":
-            selected_model_name = self.gui.get_checkpoint_info()["Model"]
-            if selected_model_name.endswith("human pose estimation"):
-                return "human pose estimation"
-            elif selected_model_name.endswith("animal pose estimation"):
-                return "animal pose estimation"
-        elif model_source == "Custom models":
-            return self.select_task_type.get_value()
+        if sly.is_production():
+            model_source = self.gui.get_model_source()
+            if model_source == "Pretrained models":
+                selected_model_name = self.gui.get_checkpoint_info()["Model"]
+                if selected_model_name.endswith("human pose estimation"):
+                    return "human pose estimation"
+                elif selected_model_name.endswith("animal pose estimation"):
+                    return "animal pose estimation"
+            elif model_source == "Custom models":
+                return self.select_task_type.get_value()
+        else:
+            return "human pose estimation"
 
     def set_template(self):
-        task_type = self.get_task_type()
-        if task_type == "human pose estimation":
+        if sly.is_production():
+            task_type = self.get_task_type()
+            if task_type == "human pose estimation":
+                self.keypoints_template = human_template
+            elif task_type == "animal pose estimation":
+                self.keypoints_template = animal_template
+        else:
             self.keypoints_template = human_template
-        elif task_type == "animal pose estimation":
-            self.keypoints_template = animal_template
 
     def preprocess_weights(self, weights_path):
         checkpoint = torch.load(weights_path, map_location="cpu")
@@ -73,7 +79,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                     [value, experts[key.replace("fc2.", f"experts.{target_expert}.")]], dim=0
                 )
                 new_checkpoint["state_dict"][key] = value
-        if self.get_task_type == "human pose estimation":
+        if self.get_task_type() == "human pose estimation":
             torch.save(new_checkpoint, weights_path)
         names = ["aic", "mpii", "ap10k", "apt36k", "wholebody"]
         num_keypoints = [14, 16, 17, 17, 133]
@@ -192,13 +198,15 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 self.preprocess_weights(pose_checkpoint)
         else:
             # for local debug only
-            models_data = self.get_models_data()
+            models_data = self.get_models(mode="links")
             weights_link = models_data[selected_model]["weights"]
             weights_file_name = models_data[selected_model]["config"][:-2] + "pth"
             pose_checkpoint = os.path.join(model_dir, weights_file_name)
             if not sly.fs.file_exists(pose_checkpoint):
                 sly.fs.download(url=weights_link, save_path=pose_checkpoint)
-            pose_config = models_data[selected_model]["config"]
+            pose_config = os.path.join(
+                root_source_path, "configs", models_data[selected_model]["config"]
+            )
         # initialize pose estimator
         self.pose_model = init_pose_model(pose_config, pose_checkpoint, device=device)
         # define class names
