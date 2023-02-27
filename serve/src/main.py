@@ -338,7 +338,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         return results
 
 
-settings = {"point_threshold": 0.3}
+settings = {"point_threshold": 0.2}
 
 if not sly.is_production():
     local_bboxes = [
