@@ -1,5 +1,5 @@
 import supervisely as sly
-from supervisely.app.widgets import RadioGroup, Field
+from supervisely.app.widgets import RadioGroup, Field, Table, NotificationBox, Container
 from typing_extensions import Literal
 from typing import List, Any, Dict, Optional
 from pathlib import Path
@@ -13,16 +13,19 @@ from dotenv import load_dotenv
 import cv2
 from mmpose.apis import inference_top_down_pose_model, init_pose_model
 import numpy as np
+import pandas as pd
 import os
 from src.keypoints_templates import human_template, animal_template
+from src.animal_species import animals
 
 
+load_dotenv("local.env")
+load_dotenv(os.path.expanduser("~/supervisely.env"))
 root_source_path = str(Path(__file__).parents[2])
 app_source_path = str(Path(__file__).parents[1])
 model_data_path = os.path.join(root_source_path, "models", "model_data.json")
 configs_path = os.path.join(root_source_path, "configs")
-load_dotenv("local.env")
-load_dotenv(os.path.expanduser("~/supervisely.env"))
+api = sly.Api()
 
 
 class ViTPoseModel(sly.nn.inference.PoseEstimation):
@@ -36,6 +39,46 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         )
         select_task_type_f = Field(self.select_task_type, "Select task type")
         return select_task_type_f
+
+    def add_content_to_pretrained_tab(self, gui):
+        animal_table_data = pd.DataFrame(data=animals, columns=[" "])
+        animal_species_table = Table()
+        animal_species_table.read_pandas(animal_table_data)
+        animal_species_table_f = Field(animal_species_table, "List of supported animal species")
+        notification = NotificationBox(
+            description="""
+            Please note that object detection models pretrained on COCO will be able to detect
+            only 9 animal species from the list ebove: cat, dog, horse, sheep, cow, elephant,
+            bear, zebra and giraffe. If you will use such detection models, other animal species
+            will be ignored, because pose estimation model can't detect animal's keypoints without
+            bounding box provided. If you want to perform pose estimation of animal species which
+            are not presented in COCO (for example, lions), you have 2 options: 1) train custom
+            object detection model to detect lions or 2) use ROI inference mode and draw bounding
+            boxes of lions by yourself in annotation tool.
+
+            You should also take into consideration the fact that the list above is not strict and
+            such animal pose estimation models are able to estimate pose not only of animal species
+            from AP10K dataset (from the list above), but also species related to them. For example, 
+            even through ocelot is not in the list of AP10K dataset classes, ViTPose+ models pretrained 
+            on AP10K dataset are still able to detect keypoints of ocelots, because ocelot's posture is 
+            very similar to other species from the cat family, which are presented in AP10K dataset 
+            (like lions, tigers, bobcats, etc.).
+            """
+        )
+        self.custom_animal_content = Container(widgets=[animal_species_table_f, notification])
+        self.custom_animal_content.hide()
+
+        @gui._models_table.value_changed
+        def on_model_selected(model_row):
+            if model_row[0].endswith("animal pose estimation"):
+                self.custom_animal_content.show()
+            elif (
+                model_row[0].endswith("human pose estimation")
+                and not self.custom_animal_content.is_hidden()
+            ):
+                self.custom_animal_content.hide()
+
+        return self.custom_animal_content
 
     def get_task_type(self):
         if sly.is_production():
@@ -214,7 +257,8 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         if self.task_type == "human pose estimation":
             self.class_names = ["person_keypoints"]
         elif self.task_type == "animal pose estimation":
-            self.class_names = ["animal_keypoints"]
+            self.class_names = [animal + "_keypoints" for animal in animals]
+            self.class_names.append("animal_keypoints")
         print(f"✅ Model has been successfully loaded on {device.upper()} device")
 
     def get_classes(self):
@@ -238,7 +282,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         # get point labels
         point_labels = self.keypoints_template.point_names
 
-        # inference pose estimator
+        # prepare bounding boxes
         if "local_bboxes" in settings:
             bboxes = settings["local_bboxes"]
         elif "detected_bboxes" in settings:
@@ -249,6 +293,11 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         else:
             bboxes = bbox
 
+        # prepare class names
+        if "detected_classes" in settings:
+            detected_classes = [cls + "_keypoints" for cls in settings["detected_classes"]]
+
+        # inference pose estimator
         pose_results, returned_outputs = inference_top_down_pose_model(
             self.pose_model,
             image_path,
@@ -260,26 +309,36 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         # postprocess results
         point_threshold = settings.get("point_threshold", 0.01)
         results = []
-        for result in pose_results:
+        for i, result in enumerate(pose_results):
             included_labels, included_point_coordinates = [], []
             point_coordinates, point_scores = result["keypoints"][:, :2], result["keypoints"][:, 2]
-            for i, (point_coordinate, point_score) in enumerate(
+            for j, (point_coordinate, point_score) in enumerate(
                 zip(point_coordinates, point_scores)
             ):
                 if point_score >= point_threshold:
-                    included_labels.append(point_labels[i])
+                    included_labels.append(point_labels[j])
                     included_point_coordinates.append(point_coordinate)
             if self.task_type == "human pose estimation":
                 class_name = "person_keypoints"
             elif self.task_type == "animal pose estimation":
-                class_name = "animal_keypoints"
+                class_name = None
+                if "detected_classes" in settings:  # for usage in combination with detector
+                    if detected_classes[i] in self.class_names:
+                        class_name = detected_classes[i]
+                elif "rectangle" in settings:  # for ROI inference mode
+                    rectangle_data = settings["rectangle"]
+                    objclass_info = api.object_class.get_info_by_id(id=rectangle_data["classId"])
+                    if objclass_info.name + "_keypoints" in self.class_names:
+                        class_name = objclass_info.name + "_keypoints"
+                if class_name is None:  # for case when none of the conditions above were met
+                    class_name = "animal_keypoints"
             results.append(
                 sly.nn.PredictionKeypoints(class_name, included_labels, included_point_coordinates)
             )
         return results
 
 
-settings = {"point_threshold": 0.1}
+settings = {"point_threshold": 0.3}
 
 if not sly.is_production():
     local_bboxes = [
