@@ -48,7 +48,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         notification = NotificationBox(
             description="""
             Please note that object detection models pretrained on COCO will be able to detect
-            only 9 animal species from the list ebove: cat, dog, horse, sheep, cow, elephant,
+            only 9 animal species from the list above: cat, dog, horse, sheep, cow, elephant,
             bear, zebra and giraffe. If you will use such detection models, other animal species
             will be ignored, because pose estimation model can't detect animal's keypoints without
             bounding box provided. If you want to perform pose estimation of animal species which
