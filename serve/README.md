@@ -54,6 +54,7 @@ To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise
 
 ![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
 
+If you create bounding box with class name, which is presented in list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
 
 # Related apps
 
