@@ -31,11 +31,29 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
-![screenshot-dev-supervise-ly-apps-7412-sessions-27716-1676977390333](https://user-images.githubusercontent.com/91027877/220327825-49c9433b-4ac4-45d7-a1c4-cb1e2bfde606.png)
+![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
+
 
 **Step 2.** Wait for the model to deploy
 
-![screenshot-dev-supervise-ly-apps-7412-sessions-27761-1676980517943](https://user-images.githubusercontent.com/91027877/220338410-3812095f-e9d2-4a2a-933e-0579b280ca46.png)
+![image](https://user-images.githubusercontent.com/91027877/221755657-4a573c23-f478-4167-bbce-7c93de11a330.png)
+
+If you select model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
+
+![screenshot-dev-supervise-ly-apps-7412-sessions-28159-1677553835357](https://user-images.githubusercontent.com/91027877/221749128-99812eca-30ae-48ef-b43f-ce73b92cd471.png)
+
+**Custom models**
+
+Copy model file path from Team Files and select task type:
+
+![custom_models](https://user-images.githubusercontent.com/91027877/221755821-088d7de3-1297-4c87-856c-75fa75f973f8.gif)
+
+**Example**
+
+To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to ROI":
+
+![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
+
 
 # Related apps
 
@@ -43,7 +61,7 @@ You can use served model in next Supervisely Applications ⬇️
 
 - [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
    
-    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png" width="350px"/>
+    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220315624-c6e79003-39fb-43e7-be48-ead1c9fae771.png" width="350px"/>
     
 # Acknowledgment
 
