@@ -38,7 +38,7 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 ![image](https://user-images.githubusercontent.com/91027877/221755657-4a573c23-f478-4167-bbce-7c93de11a330.png)
 
-If you selected model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
+If you select model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
 
 ![screenshot-dev-supervise-ly-apps-7412-sessions-28159-1677553835357](https://user-images.githubusercontent.com/91027877/221749128-99812eca-30ae-48ef-b43f-ce73b92cd471.png)
 
