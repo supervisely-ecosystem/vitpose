@@ -41,6 +41,9 @@ If you selected model for animal pose estimation, you will also see list of supp
 
 ![screenshot-dev-supervise-ly-apps-7412-sessions-28159-1677553835357](https://user-images.githubusercontent.com/91027877/221749128-99812eca-30ae-48ef-b43f-ce73b92cd471.png)
 
+**Custom models**
+
+Copy model file path from Team Files and select task type:
 
 # Related apps
 
