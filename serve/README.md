@@ -50,7 +50,7 @@ Copy model file path from Team Files and select task type:
 
 **Example**
 
-To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to object ROI":
+To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to ROI":
 
 ![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
 
