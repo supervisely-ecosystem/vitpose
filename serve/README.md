@@ -37,6 +37,11 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 ![screenshot-dev-supervise-ly-apps-7412-sessions-27761-1676980517943](https://user-images.githubusercontent.com/91027877/220338410-3812095f-e9d2-4a2a-933e-0579b280ca46.png)
 
+If you selected model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
+
+![screenshot-dev-supervise-ly-apps-7412-sessions-28159-1677553835357](https://user-images.githubusercontent.com/91027877/221749128-99812eca-30ae-48ef-b43f-ce73b92cd471.png)
+
+
 # Related apps
 
 You can use served model in next Supervisely Applications ⬇️
