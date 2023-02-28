@@ -332,9 +332,12 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                         class_name = objclass_info.name + "_keypoints"
                 if class_name is None:  # for case when none of the conditions above were met
                     class_name = "animal_keypoints"
-            results.append(
-                sly.nn.PredictionKeypoints(class_name, included_labels, included_point_coordinates)
-            )
+            if len(included_labels) > 1:
+                results.append(
+                    sly.nn.PredictionKeypoints(
+                        class_name, included_labels, included_point_coordinates
+                    )
+                )
         return results
 
 
