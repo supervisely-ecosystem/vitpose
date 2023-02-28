@@ -31,11 +31,12 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
-![screenshot-dev-supervise-ly-apps-7412-sessions-27716-1676977390333](https://user-images.githubusercontent.com/91027877/220327825-49c9433b-4ac4-45d7-a1c4-cb1e2bfde606.png)
+![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
+
 
 **Step 2.** Wait for the model to deploy
 
-![screenshot-dev-supervise-ly-apps-7412-sessions-27761-1676980517943](https://user-images.githubusercontent.com/91027877/220338410-3812095f-e9d2-4a2a-933e-0579b280ca46.png)
+![image](https://user-images.githubusercontent.com/91027877/221755657-4a573c23-f478-4167-bbce-7c93de11a330.png)
 
 If you selected model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
 
@@ -44,6 +45,15 @@ If you selected model for animal pose estimation, you will also see list of supp
 **Custom models**
 
 Copy model file path from Team Files and select task type:
+
+![custom_models](https://user-images.githubusercontent.com/91027877/221755821-088d7de3-1297-4c87-856c-75fa75f973f8.gif)
+
+**Example**
+
+To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to object ROI":
+
+![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
+
 
 # Related apps
 
