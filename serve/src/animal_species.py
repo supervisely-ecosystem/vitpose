@@ -30,7 +30,6 @@ animals = [
     "panda",
     "panther",
     "pig",
-    "polar_bear",
     "rabbit",
     "raccoon",
     "rat",
