@@ -86,6 +86,12 @@ Result:
 
 For animal pose estimation task: if you create bounding box with class name, which is presented in the list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
 
+If there is only a part of target object on the image, then you can tune point threshold in app settings to get rid of unnecessary points:
+
+https://user-images.githubusercontent.com/91027877/222139867-61d01ad2-d576-48ee-aae0-990c014c709e.mp4
+
+
+
 # Related apps
 
 You can use served model in next Supervisely Applications ⬇️
