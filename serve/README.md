@@ -70,7 +70,7 @@ You can use served model in next Supervisely Applications ⬇️
 
 - [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
    
-    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src=https://user-images.githubusercontent.com/91027877/222169346-6c813d3a-6216-44da-bff1-98654943398b.png width="350px"/>
+    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src=https://user-images.githubusercontent.com/91027877/222169346-6c813d3a-6216-44da-bff1-98654943398b.png width="650px"/>
     
 # Acknowledgment
 
