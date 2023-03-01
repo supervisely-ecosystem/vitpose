@@ -90,7 +90,9 @@ If there is only a part of target object on the image, then you can tune point t
 
 https://user-images.githubusercontent.com/91027877/222139867-61d01ad2-d576-48ee-aae0-990c014c709e.mp4
 
+If you want keypoints labels to be shown, go to image settings and set parameter "Show keypoints labels" to "Always":
 
+![show_keypoints_labels](https://user-images.githubusercontent.com/91027877/222141253-7e7a5e48-8f3b-45c9-b001-330910deb2ae.gif)
 
 # Related apps
 
