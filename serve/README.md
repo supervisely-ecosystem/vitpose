@@ -6,7 +6,7 @@
   
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Use">How To Use</a> •
+  <a href="#How-To-Run">How To Run</a> •
   <a href="#example-apply-vitpose-to-image-in-labeling-tool">Example: apply ViTPose to image in labeling tool</a> •
   <a href="#Related-apps">Related Apps</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
@@ -26,13 +26,14 @@ Serve ViTPose model as Supervisely Application. ViTPose is an open source pose e
 
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (full image, image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
-# How to Use
+# How to Run
 
 **Pretrained models**
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
 ![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
+
 
 
 **Step 2.** Wait for the model to deploy
