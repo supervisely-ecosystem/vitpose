@@ -6,7 +6,8 @@
   
 <p align="center">
   <a href="#Overview">Overview</a> •
-  <a href="#How-To-Use">How To Use</a> •
+  <a href="#How-To-Run">How To Run</a> •
+  <a href="#example-apply-vitpose-to-image-in-labeling-tool">Example: apply ViTPose to image in labeling tool</a> •
   <a href="#Related-apps">Related Apps</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
@@ -14,8 +15,8 @@
 [![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/vitpose/serve)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/vitpose)
-[![views](https://app.supervise.ly/img/badges/views/supervisely-ecosystem/mmsegmentation/serve.png)](https://supervise.ly)
-[![runs](https://app.supervise.ly/img/badges/runs/supervisely-ecosystem/mmsegmentation/serve.png)](https://supervise.ly)
+[![views](https://app.supervise.ly/img/badges/views/supervisely-ecosystem/vitpose/serve.png)](https://supervise.ly)
+[![runs](https://app.supervise.ly/img/badges/runs/supervisely-ecosystem/vitpose/serve.png)](https://supervise.ly)
 
 </div>
 
@@ -25,14 +26,13 @@ Serve ViTPose model as Supervisely Application. ViTPose is an open source pose e
 
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (full image, image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
-# How to Use
+# How to Run
 
 **Pretrained models**
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
 ![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
-
 
 **Step 2.** Wait for the model to deploy
 
@@ -46,15 +46,23 @@ If you select model for animal pose estimation, you will also see list of suppor
 
 Copy model file path from Team Files and select task type:
 
-![custom_models](https://user-images.githubusercontent.com/91027877/221755821-088d7de3-1297-4c87-856c-75fa75f973f8.gif)
+https://user-images.githubusercontent.com/91027877/222154098-6ce825eb-ec32-4c2b-ae3b-545f0ec288d1.mp4
 
-**Example**
+# Example: apply ViTPose to image in labeling tool
 
-To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to ROI":
+Run NN Image Labeling app, connect to ViTPose, create bounding box and click on "Apply model to ROI":
 
-![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
+https://user-images.githubusercontent.com/91027877/222157699-6af2fd7b-d90b-40c7-bbb5-4626cb69e696.mp4
 
-If you create bounding box with class name, which is presented in list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
+For animal pose estimation task: if you create bounding box with class name, which is presented in the list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
+
+If you want keypoints labels to be shown, go to image settings and set parameter "Show keypoints labels" to "Always". You can also tune line width and many other visualization parameters:
+
+https://user-images.githubusercontent.com/91027877/222158310-49f4a695-5e8f-41e3-aa08-229a9bb6410a.mp4
+
+If there is only a part of target object on the image, then you can increase point threshold in app settings to get rid of unnecessary points:
+
+https://user-images.githubusercontent.com/91027877/222139867-61d01ad2-d576-48ee-aae0-990c014c709e.mp4
 
 # Related apps
 
@@ -62,7 +70,7 @@ You can use served model in next Supervisely Applications ⬇️
 
 - [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
    
-    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220315624-c6e79003-39fb-43e7-be48-ead1c9fae771.png" width="350px"/>
+    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src=https://user-images.githubusercontent.com/91027877/222169346-6c813d3a-6216-44da-bff1-98654943398b.png width="650px"/>
     
 # Acknowledgment
 
