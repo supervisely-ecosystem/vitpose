@@ -1,4 +1,4 @@
-FROM supervisely/base-py-sdk:6.69.65
+FROM supervisely/base-py-sdk:6.69.66
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
@@ -20,4 +20,4 @@ COPY __init__.py /ViTPose/mmpose/
 RUN pip3 install pyyaml==6.0
 RUN pip3 install ffmpeg-python==0.2.0
 
-RUN python3 -m pip install supervisely==6.69.65
+RUN python3 -m pip install supervisely==6.69.66
