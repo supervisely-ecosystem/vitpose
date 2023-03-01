@@ -48,51 +48,23 @@ Copy model file path from Team Files and select task type:
 
 https://user-images.githubusercontent.com/91027877/222154098-6ce825eb-ec32-4c2b-ae3b-545f0ec288d1.mp4
 
-**Example**
 
-Step 1. Scroll apps field up to get access to apps for labeling UI:
 
-![step_1_1](https://user-images.githubusercontent.com/91027877/222123233-8b063e55-3263-4f49-ba26-aa7586400eab.jpeg)
+**Example: apply ViTPose to image in labeling tool**
 
-![step_1_2](https://user-images.githubusercontent.com/91027877/222129713-66e97726-c0ba-4e2f-89bc-f22b0f221c59.gif)
+Run NN Image Labeling app, connect to ViTPose, create bounding box and click on "Apply model to ROI":
 
-Step 2. Select "NN Image Labeling" app and run it:
-
-![step_2_1](https://user-images.githubusercontent.com/91027877/222123429-a65ed482-53aa-4056-9d9e-340f52c6c8dd.jpeg)
-
-![step_2_2](https://user-images.githubusercontent.com/91027877/222123616-954a33c2-8774-40a0-90bf-601ed52efd83.jpeg)
-
-Step 3. Connect to ViTPose:
-
-![step_3_1](https://user-images.githubusercontent.com/91027877/222124338-5b35b061-a444-4dc2-959e-2c50f6420809.jpeg)
-
-![step_3_2](https://user-images.githubusercontent.com/91027877/222124496-31850d79-201a-4bd8-a6f0-d60f54c4727c.jpeg)
-
-Step 4. Create rectangle class and put target object in it:
-
-![step_4_1](https://user-images.githubusercontent.com/91027877/222125562-22d2963f-0e14-49bb-a840-66e3af15cfb3.jpeg)
-
-![step_4_2](https://user-images.githubusercontent.com/91027877/222125603-43c45d79-4d60-4223-a548-c296e514e963.jpeg)
-
-![step_4_3](https://user-images.githubusercontent.com/91027877/222132268-f68bef13-b6b2-41fa-998c-9ec4836db015.gif)
-
-Step 5. Click on "Apply model to ROI":
-
-![step_5](https://user-images.githubusercontent.com/91027877/222125951-cc5abd83-af30-4a32-bb1b-e6b169404505.jpeg)
-
-Result:
-
-![step_result](https://user-images.githubusercontent.com/91027877/222126060-071928cb-e5d8-4485-a9c5-2b234b61bec8.png)
+https://user-images.githubusercontent.com/91027877/222157699-6af2fd7b-d90b-40c7-bbb5-4626cb69e696.mp4
 
 For animal pose estimation task: if you create bounding box with class name, which is presented in the list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
 
-If there is only a part of target object on the image, then you can tune point threshold in app settings to get rid of unnecessary points:
+If you want keypoints labels to be shown, go to image settings and set parameter "Show keypoints labels" to "Always". You can also tune line width and many other visualization parameters:
+
+https://user-images.githubusercontent.com/91027877/222158310-49f4a695-5e8f-41e3-aa08-229a9bb6410a.mp4
+
+If there is only a part of target object on the image, then you can increase point threshold in app settings to get rid of unnecessary points:
 
 https://user-images.githubusercontent.com/91027877/222139867-61d01ad2-d576-48ee-aae0-990c014c709e.mp4
-
-If you want keypoints labels to be shown, go to image settings and set parameter "Show keypoints labels" to "Always":
-
-![show_keypoints_labels](https://user-images.githubusercontent.com/91027877/222141253-7e7a5e48-8f3b-45c9-b001-330910deb2ae.gif)
 
 # Related apps
 
