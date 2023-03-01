@@ -7,6 +7,7 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-To-Use">How To Use</a> •
+  <a href="#Example:-apply-ViTPose-to-image-in-labeling-tool">Example: apply ViTPose to image in labeling tool</a> •
   <a href="#Related-apps">Related Apps</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
@@ -48,9 +49,7 @@ Copy model file path from Team Files and select task type:
 
 https://user-images.githubusercontent.com/91027877/222154098-6ce825eb-ec32-4c2b-ae3b-545f0ec288d1.mp4
 
-
-
-**Example: apply ViTPose to image in labeling tool**
+# Example: apply ViTPose to image in labeling tool
 
 Run NN Image Labeling app, connect to ViTPose, create bounding box and click on "Apply model to ROI":
 
