@@ -50,11 +50,37 @@ Copy model file path from Team Files and select task type:
 
 **Example**
 
-To label your image using ViTPose, run [NN Image Labeling](https://dev.supervise.ly/ecosystem/apps/nn-image-labeling/annotation-tool) app, connect to served ViTPose model, draw bounding box and click "apply model to ROI":
+Step 1. Scroll apps field up to get access to apps for labeling UI:
 
-![roi_inference](https://user-images.githubusercontent.com/91027877/221756280-10cdeea1-db3f-403d-89b5-0a2a34df9021.gif)
+![step_1](https://user-images.githubusercontent.com/91027877/222123233-8b063e55-3263-4f49-ba26-aa7586400eab.jpeg)
 
-If you create bounding box with class name, which is presented in list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
+Step 2. Select "NN Image Labeling" app and run it:
+
+![step_2_1](https://user-images.githubusercontent.com/91027877/222123429-a65ed482-53aa-4056-9d9e-340f52c6c8dd.jpeg)
+
+![step_2_2](https://user-images.githubusercontent.com/91027877/222123616-954a33c2-8774-40a0-90bf-601ed52efd83.jpeg)
+
+Step 3. Connect to ViTPose:
+
+![step_3_1](https://user-images.githubusercontent.com/91027877/222124338-5b35b061-a444-4dc2-959e-2c50f6420809.jpeg)
+
+![step_3_2](https://user-images.githubusercontent.com/91027877/222124496-31850d79-201a-4bd8-a6f0-d60f54c4727c.jpeg)
+
+Step 4. Create rectangle class and put target object in it:
+
+![step_4_1](https://user-images.githubusercontent.com/91027877/222125562-22d2963f-0e14-49bb-a840-66e3af15cfb3.jpeg)
+
+![step_4_2](https://user-images.githubusercontent.com/91027877/222125603-43c45d79-4d60-4223-a548-c296e514e963.jpeg)
+
+Step 5. Click on "Apply model to ROI":
+
+![step_5](https://user-images.githubusercontent.com/91027877/222125951-cc5abd83-af30-4a32-bb1b-e6b169404505.jpeg)
+
+Result:
+
+![step_result](https://user-images.githubusercontent.com/91027877/222126060-071928cb-e5d8-4485-a9c5-2b234b61bec8.png)
+
+For animal pose estimation task: if you create bounding box with class name, which is presented in the list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
 
 # Related apps
 
