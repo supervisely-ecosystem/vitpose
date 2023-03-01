@@ -7,7 +7,7 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-To-Use">How To Use</a> •
-  <a href="#Example:-apply-ViTPose-to-image-in-labeling-tool">Example: apply ViTPose to image in labeling tool</a> •
+  <a href="#example-apply-vitpose-to-image-in-labeling-tool">Example: apply ViTPose to image in labeling tool</a> •
   <a href="#Related-apps">Related Apps</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
