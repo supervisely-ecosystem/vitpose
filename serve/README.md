@@ -34,8 +34,6 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 ![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
 
-
-
 **Step 2.** Wait for the model to deploy
 
 ![image](https://user-images.githubusercontent.com/91027877/221755657-4a573c23-f478-4167-bbce-7c93de11a330.png)
@@ -72,7 +70,7 @@ You can use served model in next Supervisely Applications ⬇️
 
 - [Apply Detection and Pose Estimation Models to Images Project](https://dev.supervise.ly/ecosystem/apps/apply-det-and-pose-estim-models-to-project) - app allows to label images project using served  detection and pose estimation models.
    
-    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src="https://user-images.githubusercontent.com/97401023/220315624-c6e79003-39fb-43e7-be48-ead1c9fae771.png" width="350px"/>
+    <img data-key="sly-module-link" data-module-slug="supervisely-ecosystem/apply-det-and-pose-estim-models-to-project" src=https://user-images.githubusercontent.com/91027877/222169346-6c813d3a-6216-44da-bff1-98654943398b.png width="350px"/>
     
 # Acknowledgment
 
