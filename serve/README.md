@@ -46,7 +46,7 @@ If you select model for animal pose estimation, you will also see list of suppor
 
 Copy model file path from Team Files and select task type:
 
-![custom_models](https://user-images.githubusercontent.com/91027877/221755821-088d7de3-1297-4c87-856c-75fa75f973f8.gif)
+https://user-images.githubusercontent.com/91027877/222154098-6ce825eb-ec32-4c2b-ae3b-545f0ec288d1.mp4
 
 **Example**
 
