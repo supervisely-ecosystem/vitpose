@@ -32,15 +32,15 @@ Model serving allows to apply model to image (URL, local file, Supervisely image
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
-![image](https://user-images.githubusercontent.com/91027877/221755507-9403d2d1-2062-43a7-bd89-f2d74ca0a48f.png)
-
-**Step 2.** Wait for the model to deploy
-
-![image](https://user-images.githubusercontent.com/91027877/221755657-4a573c23-f478-4167-bbce-7c93de11a330.png)
+![screencapture-dev-supervise-ly-apps-7412-sessions-28261-2023-03-01-17_57_13](https://user-images.githubusercontent.com/91027877/222177351-2047f406-f6e3-4ba4-a395-73f2b3c5fcd9.png)
 
 If you select model for animal pose estimation, you will also see list of supported animal species and basic information about pitfalls of animal pose estimation:
 
-![screenshot-dev-supervise-ly-apps-7412-sessions-28159-1677553835357](https://user-images.githubusercontent.com/91027877/221749128-99812eca-30ae-48ef-b43f-ce73b92cd471.png)
+![screencapture-dev-supervise-ly-apps-7412-sessions-28261-2023-03-01-18_00_09](https://user-images.githubusercontent.com/91027877/222177825-bc0da3cf-7c06-447a-bf81-e627f94614eb.png)
+
+**Step 2.** Wait for the model to deploy
+
+![screencapture-dev-supervise-ly-apps-7412-sessions-28261-2023-03-01-18_02_23](https://user-images.githubusercontent.com/91027877/222178391-c32985b6-74a0-46dc-a671-dc95c9532c34.png)
 
 **Custom models**
 
