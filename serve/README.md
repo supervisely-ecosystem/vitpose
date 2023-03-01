@@ -52,7 +52,9 @@ Copy model file path from Team Files and select task type:
 
 Step 1. Scroll apps field up to get access to apps for labeling UI:
 
-![step_1](https://user-images.githubusercontent.com/91027877/222123233-8b063e55-3263-4f49-ba26-aa7586400eab.jpeg)
+![step_1_1](https://user-images.githubusercontent.com/91027877/222123233-8b063e55-3263-4f49-ba26-aa7586400eab.jpeg)
+
+![step_1_2](https://user-images.githubusercontent.com/91027877/222129713-66e97726-c0ba-4e2f-89bc-f22b0f221c59.gif)
 
 Step 2. Select "NN Image Labeling" app and run it:
 
@@ -71,6 +73,8 @@ Step 4. Create rectangle class and put target object in it:
 ![step_4_1](https://user-images.githubusercontent.com/91027877/222125562-22d2963f-0e14-49bb-a840-66e3af15cfb3.jpeg)
 
 ![step_4_2](https://user-images.githubusercontent.com/91027877/222125603-43c45d79-4d60-4223-a548-c296e514e963.jpeg)
+
+![step_4_3](https://user-images.githubusercontent.com/91027877/222132268-f68bef13-b6b2-41fa-998c-9ec4836db015.gif)
 
 Step 5. Click on "Apply model to ROI":
 
