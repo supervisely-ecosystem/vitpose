@@ -24,7 +24,7 @@
 
 Serve ViTPose model as Supervisely Application. ViTPose is an open source pose estimation toolbox based on PyTorch. Learn more about ViTPose and available models [here](https://github.com/ViTAE-Transformer/ViTPose).
 
-Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (full image, image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
+Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (in combination with detection model using Apply Detection and Pose Estimation Models to Images Project app or image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
 # How to Run
 
