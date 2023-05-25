@@ -52,13 +52,13 @@ https://user-images.githubusercontent.com/91027877/222154098-6ce825eb-ec32-4c2b-
 
 Run NN Image Labeling app, connect to ViTPose, create bounding box and click on "Apply model to ROI":
 
-https://user-images.githubusercontent.com/91027877/222157699-6af2fd7b-d90b-40c7-bbb5-4626cb69e696.mp4
+https://user-images.githubusercontent.com/91027877/240876681-c7547f2d-643a-4d9a-899c-db569b255bf7.mp4
 
 For animal pose estimation task: if you create bounding box with class name, which is presented in the list of supported animal species, keypoints skeleton class with name "{your_class_name}_keypoints" will be created. Otherwise keypoints skeleton class with name "animal_keypoints" will be created.
 
 If you want keypoints labels to be shown, go to image settings and set parameter "Show keypoints labels" to "Always". You can also tune line width and many other visualization parameters:
 
-https://user-images.githubusercontent.com/91027877/222158310-49f4a695-5e8f-41e3-aa08-229a9bb6410a.mp4
+https://user-images.githubusercontent.com/91027877/240876898-2dcc1542-8338-4778-aaab-55d81054814d.mp4
 
 If there is only a part of target object on the image, then you can increase point threshold in app settings to get rid of unnecessary points:
 
