@@ -8,8 +8,7 @@
     "images",
     "pose estimation",
     "keypoints detection",
-    "serve",
-    "development"
+    "serve"
   ],
   "icon": "https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png",
   "icon_cover": true,
@@ -26,6 +25,6 @@
   "port": 8000,
   "task_location": "application_sessions",
   "license": {
-    "type": "Apache-2.0" 
+    "type": "Apache-2.0"
   }
 }
