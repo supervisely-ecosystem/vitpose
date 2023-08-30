@@ -1,4 +1,4 @@
-FROM supervisely/base-py-sdk:6.72.114
+FROM supervisely/base-py-sdk:6.69.66
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
@@ -17,11 +17,9 @@ RUN pip3 install -v -e .
 RUN pip3 install timm==0.4.9 einops
 WORKDIR /
 COPY __init__.py /ViTPose/mmpose/
+RUN pip3 install pyyaml==6.0
+RUN pip3 install ffmpeg-python==0.2.0
 
-# already in supervisely
-# RUN pip3 install pyyaml==6.0
-# RUN pip3 install ffmpeg-python==0.2.0
-
-RUN python3 -m pip install supervisely==6.72.114
+RUN python3 -m pip install supervisely==6.69.66
 
 RUN rm -rf /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1 /usr/lib/x86_64-linux-gnu/libcuda.so.1
