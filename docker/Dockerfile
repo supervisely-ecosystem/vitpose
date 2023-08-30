@@ -1,5 +1,6 @@
 FROM supervisely/base-py-sdk:6.69.66
 
+RUN rm -rf /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1 /usr/lib/x86_64-linux-gnu/libcuda.so.1
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 RUN apt-get install -y build-essential
