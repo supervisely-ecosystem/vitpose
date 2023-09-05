@@ -24,6 +24,16 @@
 
 Serve ViTPose model as Supervisely Application. ViTPose is an open source pose estimation toolbox based on PyTorch. Learn more about ViTPose and available models [here](https://github.com/ViTAE-Transformer/ViTPose).
 
+🔥🔥🔥 Check out our youtube tutorials for:
+
+1. [Animal pose estimation](https://youtu.be/piryWAGuyZk?si=siUCzXs3vUuFzEhS) + complete guides in our blog [here](https://supervisely.com/blog/vitpose-state-of-the-art-pose-estimation-model-in-supervisely/) and [here](https://supervisely.com/blog/animal-pose-estimation/)
+
+<a href="https://youtu.be/piryWAGuyZk?si=oHp6u0RT0o29qnd_" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/e318a10a-4fa8-4ea8-84ce-366c3a9a1a11"/></a>
+
+2. [Human pose estimation](https://youtu.be/CQBN5e-t_GE?si=HOX86AmlPTha-yRz) + complete guides in our blog [here](https://supervisely.com/blog/vitpose-state-of-the-art-pose-estimation-model-in-supervisely/) and [here](https://supervisely.com/blog/human-pose-estimation/)
+
+<a href="https://youtu.be/CQBN5e-t_GE?si=HOX86AmlPTha-yRz" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/4b02fa8f-5c4c-4378-9b32-68738cd940d8"/></a>
+
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (in combination with detection model using Apply Detection and Pose Estimation Models to Images Project app or image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
 # How to Run
