@@ -28,11 +28,15 @@ Serve ViTPose model as Supervisely Application. ViTPose is an open source pose e
 
 1. [Animal pose estimation](https://youtu.be/piryWAGuyZk?si=siUCzXs3vUuFzEhS) + complete guides in our blog [here](https://supervisely.com/blog/vitpose-state-of-the-art-pose-estimation-model-in-supervisely/) and [here](https://supervisely.com/blog/animal-pose-estimation/)
 
-<a href="https://youtu.be/piryWAGuyZk?si=oHp6u0RT0o29qnd_" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/e318a10a-4fa8-4ea8-84ce-366c3a9a1a11"/></a>
+<a data-key="sly-embeded-video-link" href="https://youtu.be/piryWAGuyZk?si=oHp6u0RT0o29qnd_" data-video-code="oHp6u0RT0o29qnd_">
+    <img src="https://github.com/supervisely-ecosystem/vitpose/assets/106374579/8cba3db7-28ab-42a1-b2e1-6c78c1807896")
+" alt="SLY_EMBEDED_VIDEO_LINK">
+</a>
 
 2. [Human pose estimation](https://youtu.be/CQBN5e-t_GE?si=HOX86AmlPTha-yRz) + complete guides in our blog [here](https://supervisely.com/blog/vitpose-state-of-the-art-pose-estimation-model-in-supervisely/) and [here](https://supervisely.com/blog/human-pose-estimation/)
 
-<a href="https://youtu.be/CQBN5e-t_GE?si=HOX86AmlPTha-yRz" target="_blank"><img src="https://github.com/supervisely/blog-raw-media-content/assets/106374579/4b02fa8f-5c4c-4378-9b32-68738cd940d8"/></a>
+<a data-key="sly-embeded-video-link" href="https://youtu.be/CQBN5e-t_GE?si=HOX86AmlPTha-yRz" data-video-code="CQBN5e-t_GE?si=HOX86AmlPTha-yRz">
+    <img src="https://github.com/supervisely-ecosystem/vitpose/assets/106374579/7e0e194e-4eb8-4047-826c-044c23f655a6")
 
 Model serving allows to apply model to image (URL, local file, Supervisely image id) with 2 modes (in combination with detection model using Apply Detection and Pose Estimation Models to Images Project app or image ROI). Also app sources can be used as example how to use downloaded model weights outside Supervisely.
 
