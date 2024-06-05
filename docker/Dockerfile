@@ -16,7 +16,7 @@ WORKDIR /ViTPose
 RUN pip3 install -v -e .
 RUN pip3 install timm==0.4.9 einops
 WORKDIR /
-COPY __init__.py /ViTPose/mmpose/
+COPY docker/__init__.py /ViTPose/mmpose/
 RUN pip3 install pyyaml==6.0
 RUN pip3 install ffmpeg-python==0.2.0
 
