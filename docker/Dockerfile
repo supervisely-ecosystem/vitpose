@@ -7,7 +7,9 @@ RUN apt-get install -y git
 RUN apt-get install -y ffmpeg libsm6 libxext6  
 RUN apt-get install ninja-build
 
-RUN pip3 install -U torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+RUN pip3 install -U torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+RUN pip3 install -U torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+
 RUN pip3 install -U openmim
 RUN mim install mmcv-full==1.7.1
 
