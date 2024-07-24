@@ -4,8 +4,6 @@ from typing_extensions import Literal
 from typing import List, Any, Dict, Optional
 from pathlib import Path
 import warnings
-from supervisely.app.exceptions import show_dialog
-
 
 warnings.filterwarnings("ignore")
 import torch
@@ -216,11 +214,9 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
     def get_weights_and_config_path(self, model_dir):
         def _validate_link(link: str) -> bool:
             if not api.file.exists(sly.env.team_id(), link) or link == "":
-                show_dialog(
-                    title="Path is invalid",
-                    description=f'Path you have provided is invalid. Please, input a Team Files path. \n\n{link}',
-                    status="error"
-                ) 
+                raise ValueError(
+                    f"Path you have provided is invalid. Please, input a Team Files path. {link}"
+                )
         model_source = self.gui.get_model_source()
         if model_source == "Pretrained models":
             models_data = self.get_models(mode="links")
