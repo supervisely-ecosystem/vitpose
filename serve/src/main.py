@@ -11,7 +11,23 @@ import torchvision
 import copy
 from dotenv import load_dotenv
 import cv2
-from mmpose.apis import inference_top_down_pose_model, init_pose_model
+
+
+# from mmpose.apis import inference_top_down_pose_model, init_pose_model
+try:
+    from mmpose.apis import inference_top_down_pose_model, init_pose_model
+except ImportError:
+    import sys
+    from pathlib import Path
+
+    vitpose_path = Path("/ViTPose")
+    mmpose_path = vitpose_path.joinpath("mmpose")
+    sys.path.insert(0, str(vitpose_path.resolve()))
+    sys.path.insert(0, str(mmpose_path.resolve()))
+
+    from mmpose.apis import inference_top_down_pose_model, init_pose_model
+
+
 import numpy as np
 import pandas as pd
 import os
