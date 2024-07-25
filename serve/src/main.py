@@ -212,6 +212,11 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             return models_data_processed
 
     def get_weights_and_config_path(self, model_dir):
+        def _validate_link(link: str) -> bool:
+            if not api.file.exists(sly.env.team_id(), link) or link == "":
+                raise ValueError(
+                    f"Path you have provided is invalid. Please, input a Team Files path. {link}"
+                )
         model_source = self.gui.get_model_source()
         if model_source == "Pretrained models":
             models_data = self.get_models(mode="links")
@@ -227,6 +232,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             return weights_dst_path, config_path
         elif model_source == "Custom models":
             custom_link = self.gui.get_custom_link()
+            _validate_link(custom_link)
             weights_file_name = os.path.basename(custom_link)
             weights_dst_path = os.path.join(model_dir, weights_file_name)
             if not sly.fs.file_exists(weights_dst_path):
