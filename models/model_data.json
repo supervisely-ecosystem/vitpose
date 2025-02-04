@@ -7,7 +7,7 @@
         "AP (%)": "73.8",
         "AR (%)": "79.2",
         "config_file_name": "ViTPose_small_classic_coco_256x192.py",
-        "weights_link": "https://6mafda.dm.files.1drv.com/y4mmIJNdva0GSE02wT52EQuFmSznit6ImM0t3esSsl3NMZt0_uTf93IohQSyak8JliqfSwuolqB4jChvQaA8PkjudYpX9cFoMJyRwB0A0G_asIHEh51TUIw_BYPyN9fY3qo0h82BjvdI1UC1u9jObNrWIotxzdwdbVE63h6Xnv5_6TCyOb6yl9zdJ_dDaZZ4i2DmnOQtSylfgmnGCTA89qz3g"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose_small.pth"
     },
     {
         "Model": "ViTPose base classic for human pose estimation",
@@ -17,7 +17,7 @@
         "AP (%)": "75.8",
         "AR (%)": "81.1",
         "config_file_name": "ViTPose_base_classic_coco_256x192.py",
-        "weights_link": "https://4mizfq.sn.files.1drv.com/y4mmN4HVKiAoyjCvPyKAWSK2Tkv5UaooeY2XmcUdxRwftMfZZ35N2kOIeyvgHzCiB2wW6yhYBdjU_nsoa2eHkSE7iWL903bTmUPrFWR3U5fPeMEXWOLVZwN2HaD-JRETuuDiLF249A_zeR3ZyxCLjnF4svHU2RLo3lgy918r59l5yA5UBrOCIE2-KpUFiF3nFo8Ae4Hf8ybzWYv7t7mbwotTQ"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose-b.pth"
     },
     {
         "Model": "ViTPose large classic for human pose estimation",
@@ -27,17 +27,7 @@
         "AP (%)": "78.3",
         "AR (%)": "83.5",
         "config_file_name": "ViTPose_large_classic_coco_256x192.py",
-        "weights_link": "https://4mgtqw.sn.files.1drv.com/y4muyZuraUZxqpGqetU-fB_B4sALZSZMx6j3wc2xKdKChDgi_SXEyT3MfBWYx2qyw9D8yyM2FUtOM-8RqoxjG8IgaJOYZLf_Qh_0U2SATiGVrHXZee0NmG0VgYHWlfZ0NoIQlo06qsO0bgU0ZmVInEJxJ7vHBgps0CTpMZXNpLSQ5B82i92RmC-zp4cOgNf3tMZPu3NzAyh0XfO8wdSLdWwQg"
-    },
-    {
-        "Model": "ViTPose huge classic for human pose estimation",
-        "Size": "2.37 GB",
-        "Resolution": "256X192",
-        "Pretrained on": "COCO",
-        "AP (%)": "79.1",
-        "AR (%)": "84.1",
-        "config_file_name": "ViTPose_huge_classic_coco_256x192.py",
-        "weights_link": "https://4mhcga.sn.files.1drv.com/y4mQ0SBqPL1IdlD3y4hTbINxvXUKs0HrrVRPanQ4jyO5KBya1WPcycvpXaKrSrfnRqOhyQ3oY6nCuEU1pXg4EMIHeTKao9BKkIbGuVLD1HX_-0usLSeEf68_a51Nu0qXXGST0udHiK67rHuZhiyNEhd-Ot3tdvVhEUb1gdMEV4V8GkwW2HAzR8Szw1PFRuyN38y3hXMz15art5HyGtPlaQ42A"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose-l.pth"
     },
     {
         "Model": "ViTPose base simple for human pose estimation",
@@ -47,7 +37,7 @@
         "AP (%)": "75.5",
         "AR (%)": "80.9",
         "config_file_name": "ViTPose_base_simple_coco_256x192.py",
-        "weights_link": "https://4mjpca.sn.files.1drv.com/y4mOufNy2ng5Rt1sLrxsCfgiBEWE3d_8gzg05YvEL7WfRyOlgLw2GvDMSkKclgj_PKLGFM_yOd39-oZYmwNNoKIjITk3-Y2CrNe89O7Z296hlISaxITblPItJCRMIB_hqnKm7S8E85GP20YO2d2Sx3oRi7Udj-tU5BxNYXdsBVecisbdFts88MgkETD4UBOeJEaIascjwkWt7R-RxXgchI_Fg"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose-b-simple.pth"
     },
     {
         "Model": "ViTPose large simple for human pose estimation",
@@ -57,17 +47,7 @@
         "AP (%)": "78.2",
         "AR (%)": "83.4",
         "config_file_name": "ViTPose_large_simple_coco_256x192.py",
-        "weights_link": "https://4mhjla.sn.files.1drv.com/y4m-GEx5WZJadsRnc_CXhpQjHcYe1Fkds-x8DAZsSYKni3OzG7PVYZ2b0ksZRvwUrXzxgzbLxguZqczfPr0RLZi5AIMdRS1EiSEA_Mz1UUhtDSV5KGoyucwmi-Sh7-006FomYN8XbAE8kFQ9CyT5MJBHAW1A8EF16Jm_BOw8v0miDgsH9hwPBBLmmxemXnhYpYjPEfzTAkd6o1FhXP_C_AVJw"
-    },
-    {
-        "Model": "ViTPose huge simple for human pose estimation",
-        "Size": "2.35 GB",
-        "Resolution": "256X192",
-        "Pretrained on": "COCO",
-        "AP (%)": "78.9",
-        "AR (%)": "84.0",
-        "config_file_name": "ViTPose_huge_simple_coco_256x192.py",
-        "weights_link": "https://4mjihw.sn.files.1drv.com/y4mfkamk4TR0ObzjlPk1eEEaB6XA_X8paLZPDAe4PF2NFsQT4oxk1VcaS8tHjt95Wvfoj71pXmEUuurpW4X1HrzflnkQWSjzP0GK2PtU_VfHRtiMRJSQNk_Qn0rIrJEhAngbk2uUa9_zvkOhPhhOlecSSQLuzbZTMTtJGIZcDFEaJ0u_I6rk1mk4RXF84SeiA472Ko27kGr-1ptCklmByoygQ"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose-l-simple.pth"
     },
     {
         "Model": "ViTPose+ small for animal pose estimation",
@@ -77,7 +57,7 @@
         "AP (%)": "71.4",
         "AR (%)": "-",
         "config_file_name": "ViTPose+_small_ap10k_256x192.py",
-        "weights_link": "https://62aeda.dm.files.1drv.com/y4muD2ggFRomdqwlv6Xfm1Awj7JELk6a-CTSmh8MG_JqdEdEX4aR5-_5WIZX8SA-5b5sicG1Sec176J7vFfSkve7rmEMx7Am1Nphjv1zspGmetKdJ_lOE99z-WDTZjtMtDmcYkBhjvc9isNpb2R9eiITu_wG1ffEW0Jd6wM8R4N7tBiUd8nTPbgknyfytqvLXBMNsrzl5A03jnYb732lKP4GA"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose_small_animal.pth"
     },
     {
         "Model": "ViTPose+ base for animal pose estimation",
@@ -87,7 +67,7 @@
         "AP (%)": "74.5",
         "AR (%)": "-",
         "config_file_name": "ViTPose+_base_ap10k_256x192.py",
-        "weights_link": "https://6mapda.dm.files.1drv.com/y4m35UCU3IIsjeqoXAC02MHzSNRLmR0wsrvVMCKqLzH5bl_YI9YOyQCYztCDBOkjJCF-YIBOOdL-EJJGidjo6L7G4JwQbP6laqoM0t9ctEFfTJ_4d1MhC7V8-Srd55xXw1IKnziLZjVdjKG-rwxOGpqds4fKCrxKSyCrMpI8gB92pmhek29HJ7R_QZBNFhpmnB--X1JRWbUx92rzYL7fEvfZw"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose_base_animal.pth"
     },
     {
         "Model": "ViTPose+ large for animal pose estimation",
@@ -97,16 +77,6 @@
         "AP (%)": "80.4",
         "AR (%)": "-",
         "config_file_name": "ViTPose+_large_ap10k_256x192.py",
-        "weights_link": "https://62afda.dm.files.1drv.com/y4mBDiqHvl4ClkQbjljDfxZ35JemNwe-D-YlTuMfeya1BIR5tVP3cO26ntjrJkBL-2L8beSmOOPy7149gWRMkDqTZCPhS--XxryYZLSGtdKxR5ADq-9S_6ApoHxLbQP4MOs63iPz2jSLQMFqJFcFdoXZ2ml2HyvGkCu7MxyP9ELoZvtYRyipBDvsFvR2bN7xUknS6LR5HdBjGpZtM7saMmIXQ"
-    },
-    {
-        "Model": "ViTPose+ huge for animal pose estimation",
-        "Size": "3.47 GB",
-        "Resolution": "256X192",
-        "Pretrained on": "AP10K",
-        "AP (%)": "82.4",
-        "AR (%)": "-",
-        "config_file_name": "ViTPose+_huge_ap10k_256x192.py",
-        "weights_link": "https://62ajda.dm.files.1drv.com/y4mWXLeCDg9SKyTP43PFvi34CB_M9xieUe0sbhT_uFi2tXObIOsZgD8FhBdFrvfel9mXReGJWNH7auPAjBtf0tv1RPw4wI85FqYc9BV-1uODEs2nOWZPDiHodtx-MHe5-G6zBzr2OjORsAcn_SoLIEYY05vRlfCjHTjQIj83HnjDD38pJL73Xrydzr86-un_QM7RR9Fw_Sl5n0g414UoEFkyA"
+        "weights_link": "https://github.com/supervisely-ecosystem/vitpose/releases/download/v1.0.3/vitpose_large_animal.pth"
     }
 ]
