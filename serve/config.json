@@ -1,30 +1,30 @@
 {
-  "name": "Serve ViTPose",
-  "type": "app",
-  "version": "2.0.0",
-  "description": "Deploy model as REST API service",
-  "categories": [
-    "neural network",
-    "images",
-    "pose estimation",
-    "keypoints detection",
-    "serve"
-  ],
-  "icon": "https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png",
-  "icon_cover": true,
-  "poster": "https://user-images.githubusercontent.com/97401023/220314920-2c2892eb-c11b-4fea-a17e-898a09fcfbed.png",
-  "need_gpu": false,
-  "gpu": "preferred",
-  "session_tags": [
-    "deployed_nn_keypoints"
-  ],
-  "community_agent": false,
-  "docker_image": "supervisely/mmpose-demo:1.0.7",
-  "instance_version": "6.10.0",
-  "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
-  "port": 8000,
-  "task_location": "application_sessions",
-  "license": {
-    "type": "Apache-2.0"
-  }
+    "name": "Serve ViTPose",
+    "type": "app",
+    "version": "2.0.0",
+    "description": "Deploy model as REST API service",
+    "categories": [
+        "neural network",
+        "images",
+        "pose estimation",
+        "keypoints detection",
+        "serve"
+    ],
+    "icon": "https://user-images.githubusercontent.com/97401023/220314584-93315979-c833-4e5b-bc57-6c85a0f7c127.png",
+    "icon_cover": true,
+    "poster": "https://user-images.githubusercontent.com/97401023/220314920-2c2892eb-c11b-4fea-a17e-898a09fcfbed.png",
+    "need_gpu": false,
+    "gpu": "preferred",
+    "session_tags": [
+        "deployed_nn_keypoints"
+    ],
+    "community_agent": false,
+    "docker_image": "supervisely/mmpose-demo:1.0.8",
+    "instance_version": "6.15.35",
+    "entrypoint": "python -m uvicorn src.main:m.app --app-dir ./serve --host 0.0.0.0 --port 8000 --ws websockets",
+    "port": 8000,
+    "task_location": "application_sessions",
+    "license": {
+        "type": "Apache-2.0"
+    }
 }
