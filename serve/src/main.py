@@ -364,6 +364,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                     rectangle_data = settings["rectangle"]
                     if isinstance(rectangle_data, dict):
                         class_id = rectangle_data.get("classId")
+                        sly.logger.debug(f"Class ID from rectangle data: {class_id}")
                         if class_id is not None:
                             try:
                                 objclass_info = api.object_class.get_info_by_id(
