@@ -60,7 +60,9 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         animal_table_data = pd.DataFrame(data=animals, columns=[" "])
         animal_species_table = Table()
         animal_species_table.read_pandas(animal_table_data)
-        animal_species_table_f = Field(animal_species_table, "List of supported animal species")
+        animal_species_table_f = Field(
+            animal_species_table, "List of supported animal species"
+        )
         notification = NotificationBox(
             description="""
             Please note that object detection models pretrained on COCO will be able to detect
@@ -81,7 +83,9 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             (like lions, tigers, bobcats, etc.).
             """
         )
-        self.custom_animal_content = Container(widgets=[animal_species_table_f, notification])
+        self.custom_animal_content = Container(
+            widgets=[animal_species_table_f, notification]
+        )
         self.custom_animal_content.hide()
 
         @gui._models_table.value_changed
@@ -135,7 +139,8 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
             if "mlp.fc2" in key:
                 value = new_checkpoint["state_dict"][key]
                 value = torch.cat(
-                    [value, experts[key.replace("fc2.", f"experts.{target_expert}.")]], dim=0
+                    [value, experts[key.replace("fc2.", f"experts.{target_expert}.")]],
+                    dim=0,
                 )
                 new_checkpoint["state_dict"][key] = value
         if self.get_task_type() == "human pose estimation":
@@ -180,17 +185,17 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 break
 
             for tensor_name in weight_names:
-                new_checkpoint["state_dict"][tensor_name] = new_checkpoint["state_dict"][
-                    tensor_name.replace("keypoint_head", f"associate_keypoint_heads.{i}")
-                ]
+                new_checkpoint["state_dict"][tensor_name] = new_checkpoint[
+                    "state_dict"
+                ][tensor_name.replace("keypoint_head", f"associate_keypoint_heads.{i}")]
 
             for tensor_name in [
                 "keypoint_head.final_layer.weight",
                 "keypoint_head.final_layer.bias",
             ]:
-                new_checkpoint["state_dict"][tensor_name] = new_checkpoint["state_dict"][
-                    tensor_name
-                ][: num_keypoints[i]]
+                new_checkpoint["state_dict"][tensor_name] = new_checkpoint[
+                    "state_dict"
+                ][tensor_name][: num_keypoints[i]]
             if names[i] == "ap10k" and self.get_task_type() == "animal pose estimation":
                 torch.save(new_checkpoint, weights_path)
 
@@ -217,6 +222,7 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 raise ValueError(
                     f"Path you have provided is invalid. Please, input a Team Files path. {link}"
                 )
+
         model_source = self.gui.get_model_source()
         if model_source == "Pretrained models":
             models_data = self.get_models(mode="links")
@@ -317,7 +323,9 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
 
         # prepare class names
         if "detected_classes" in settings:
-            detected_classes = [cls + "_keypoints" for cls in settings["detected_classes"]]
+            detected_classes = [
+                cls + "_keypoints" for cls in settings["detected_classes"]
+            ]
 
         # inference pose estimator
         pose_results, returned_outputs = inference_top_down_pose_model(
@@ -333,7 +341,10 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
         results = []
         for i, result in enumerate(pose_results):
             included_labels, included_point_coordinates = [], []
-            point_coordinates, point_scores = result["keypoints"][:, :2], result["keypoints"][:, 2]
+            point_coordinates, point_scores = (
+                result["keypoints"][:, :2],
+                result["keypoints"][:, 2],
+            )
             for j, (point_coordinate, point_score) in enumerate(
                 zip(point_coordinates, point_scores)
             ):
@@ -344,15 +355,32 @@ class ViTPoseModel(sly.nn.inference.PoseEstimation):
                 class_name = "person_keypoints"
             elif self.task_type == "animal pose estimation":
                 class_name = None
-                if "detected_classes" in settings:  # for usage in combination with detector
+                if (
+                    "detected_classes" in settings
+                ):  # for usage in combination with detector
                     if detected_classes[i] in self.class_names:
                         class_name = detected_classes[i]
                 elif "rectangle" in settings:  # for ROI inference mode
                     rectangle_data = settings["rectangle"]
-                    objclass_info = api.object_class.get_info_by_id(id=rectangle_data["classId"])
-                    if objclass_info.name + "_keypoints" in self.class_names:
-                        class_name = objclass_info.name + "_keypoints"
-                if class_name is None:  # for case when none of the conditions above were met
+                    if isinstance(rectangle_data, dict):
+                        class_id = rectangle_data.get("classId")
+                        sly.logger.debug(f"Class ID from rectangle data: {class_id}")
+                        if class_id is not None:
+                            try:
+                                objclass_info = api.object_class.get_info_by_id(
+                                    id=class_id
+                                )
+                                if (
+                                    objclass_info is not None
+                                    and objclass_info.name + "_keypoints"
+                                    in self.class_names
+                                ):
+                                    class_name = objclass_info.name + "_keypoints"
+                            except Exception:
+                                pass
+                if (
+                    class_name is None
+                ):  # for case when none of the conditions above were met
                     class_name = "animal_keypoints"
             if len(included_labels) > 1:
                 results.append(
